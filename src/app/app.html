@@ -1,0 +1,16 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>{{ title() }}</h1>
+    <div class="progress-indicator" *ngIf="currentStep() > 0">
+      Schritt {{ currentStep() }} von 3
+    </div>
+  </header>
+  
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer class="app-footer">
+    <p>Gefühls-Kompass - Unterstützung in Anspannungssituationen</p>
+  </footer>
+</div>
