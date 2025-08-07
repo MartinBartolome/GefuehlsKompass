@@ -1,1 +1,97 @@
-<p>gefuehle-bewaeltigen works!</p>
+<div class="step-container">
+  <div class="step-header">
+    <h2>Schritt 3: Gefühle bewältigen</h2>
+    <p class="step-description">
+      Du hast deine Gefühle erkannt und angenommen. Jetzt erhältst du konkrete Strategien, 
+      um mit ihnen umzugehen und dich zu stärken.
+    </p>
+  </div>
+
+  <div class="specific-strategies">
+    <h3>Strategien für deine ausgewählten Gefühle</h3>
+    
+    <div class="strategies-grid">
+      <div *ngFor="let feeling of selectedFeelings()" class="strategy-card">
+        <h4>{{ feeling.name }}</h4>
+        <ul class="strategies-list">
+          <li *ngFor="let strategy of feeling.copingStrategies">
+            {{ strategy }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="general-tools">
+    <h3>Allgemeine Bewältigungstools</h3>
+    
+    <div class="tools-grid">
+      <div *ngFor="let tool of generalStrategies" class="tool-card">
+        <h4>{{ tool.title }}</h4>
+        <p class="tool-description">{{ tool.description }}</p>
+        
+        <div class="tool-steps">
+          <h5>So gehst du vor:</h5>
+          <ol>
+            <li *ngFor="let step of tool.steps">{{ step }}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="completion-section">
+    <div class="completion-card">
+      <div class="completion-icon">✨</div>
+      <h3>Du hast diesen Moment angenommen. Gut gemacht!</h3>
+      <p class="completion-message">
+        Du hast einen wichtigen Schritt der Selbstfürsorge gemacht. Deine Gefühle zu erkennen, 
+        anzunehmen und Strategien zu finden, um mit ihnen umzugehen, zeigt deine Stärke und 
+        deinen Mut. Sei stolz auf dich.
+      </p>
+      
+      <div class="final-reminders">
+        <h4>Wichtige Erinnerungen:</h4>
+        <ul>
+          <li>🌱 Heilung ist ein Prozess - sei geduldig mit dir</li>
+          <li>🤝 Es ist okay, um Hilfe zu bitten</li>
+          <li>💚 Du verdienst Mitgefühl und Selbstfürsorge</li>
+          <li>🌟 Du bist stärker, als du denkst</li>
+        </ul>
+      </div>
+      
+      <div class="professional-help">
+        <h4>Wann professionelle Hilfe suchen?</h4>
+        <p>
+          Wenn deine Gefühle sehr intensiv sind oder länger anhalten, 
+          zögere nicht, professionelle Unterstützung zu suchen. Das ist ein Zeichen von Stärke, 
+          nicht von Schwäche.
+        </p>
+        <div class="help-resources">
+          <p><strong>Schweizer Ressourcen:</strong></p>
+          <ul>
+            <li>Dargebotene Hand: 143 (24h kostenlos)</li>
+            <li>Pro Juventute: 147 (für Jugendliche)</li>
+            <li>Dein Hausarzt oder Hausärztin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-actions">
+    <button 
+      class="btn btn-secondary" 
+      (click)="goBack()"
+      aria-label="Zurück zu Schritt 2">
+      Zurück
+    </button>
+    
+    <button 
+      class="btn btn-primary" 
+      (click)="restartJourney()"
+      aria-label="Neue Reise beginnen">
+      Neue Reise beginnen
+    </button>
+  </div>
+</div>

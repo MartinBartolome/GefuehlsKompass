@@ -1,1 +1,57 @@
-<p>gefuehle-erkennen works!</p>
+<div class="step-container">
+  <div class="step-header">
+    <h2>Schritt 1: Gefühle erkennen</h2>
+    <p class="step-description">
+      Nimm dir einen Moment Zeit und spüre in dich hinein. Wie fühlst du dich gerade? 
+      Du kannst mehrere Gefühle auswählen - das ist völlig normal.
+    </p>
+  </div>
+
+  <div class="feelings-selection">
+    <div class="category-section" *ngFor="let category of feelingsByCategory | keyvalue">
+      <h3 class="category-title">{{ category.key }}</h3>
+      
+      <div class="feelings-grid">
+        <button 
+          *ngFor="let feeling of category.value"
+          class="feeling-button"
+          [class.selected]="isFeelingSelected(feeling)"
+          (click)="toggleFeeling(feeling)"
+          [attr.aria-pressed]="isFeelingSelected(feeling)"
+          [attr.aria-label]="'Gefühl: ' + feeling.name">
+          
+          <span class="feeling-name">{{ feeling.name }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-summary" *ngIf="selectedFeelings().length > 0">
+    <h4>Ausgewählte Gefühle:</h4>
+    <div class="selected-feelings">
+      <span 
+        *ngFor="let feeling of selectedFeelings()" 
+        class="selected-feeling-tag">
+        {{ feeling.name }}
+      </span>
+    </div>
+  </div>
+
+  <div class="step-actions">
+    <button 
+      class="btn btn-secondary" 
+      (click)="goBack()"
+      aria-label="Zurück zur Startseite">
+      Zurück
+    </button>
+    
+    <button 
+      class="btn btn-primary" 
+      (click)="proceedToNextStep()"
+      [disabled]="!canProceed()"
+      [attr.aria-label]="canProceed() ? 'Weiter zum nächsten Schritt' : 'Wähle zuerst mindestens ein Gefühl aus'">
+      Weiter
+      <span *ngIf="!canProceed()" class="help-text">(Wähle mindestens ein Gefühl)</span>
+    </button>
+  </div>
+</div>
