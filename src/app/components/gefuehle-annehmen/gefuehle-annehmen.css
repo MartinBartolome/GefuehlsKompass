@@ -1,0 +1,295 @@
+.step-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.step-header h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.step-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5a6c7d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.selected-feelings-display {
+  margin-bottom: 3rem;
+}
+
+.selected-feelings-display h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.feelings-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feeling-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 4px solid #4a90e2;
+}
+
+.feeling-card h4 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feeling-description {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+.acceptance-section {
+  margin-bottom: 3rem;
+}
+
+.affirmation-card {
+  background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid #28a745;
+}
+
+.affirmation-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.affirmation {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+.breathing-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.breathing-section h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.breathing-intro {
+  color: #5a6c7d;
+  margin-bottom: 1.5rem;
+}
+
+.breathing-exercise {
+  padding: 2rem;
+}
+
+.btn-breathing {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.breathing-description {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.breathing-active {
+  padding: 2rem;
+}
+
+.breathing-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.breathing-circle.breathing-inhale {
+  transform: scale(1.2);
+}
+
+.breathing-circle.breathing-hold {
+  transform: scale(1.2);
+}
+
+.breathing-circle.breathing-exhale {
+  transform: scale(1);
+}
+
+.breathing-text {
+  color: white;
+  text-align: center;
+}
+
+.breathing-phase {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.breathing-count {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.mindfulness-section {
+  margin-bottom: 3rem;
+}
+
+.mindfulness-section h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mindfulness-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 4px solid #20c997;
+}
+
+.mindfulness-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.mindfulness-list li {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.mindfulness-note {
+  color: #5a6c7d;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-container {
+    padding: 1rem;
+  }
+  
+  .step-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .breathing-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .breathing-phase {
+    font-size: 1rem;
+  }
+  
+  .breathing-count {
+    font-size: 1.5rem;
+  }
+  
+  .step-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .affirmation-card {
+    padding: 1.5rem;
+  }
+  
+  .affirmation {
+    font-size: 1.1rem;
+  }
+}

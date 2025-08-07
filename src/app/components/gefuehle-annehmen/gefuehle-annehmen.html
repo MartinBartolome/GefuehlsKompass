@@ -1,0 +1,92 @@
+<div class="step-container">
+  <div class="step-header">
+    <h2>Schritt 2: Gefühle annehmen</h2>
+    <p class="step-description">
+      Du hast deine Gefühle erkannt. Jetzt ist es Zeit, sie zu verstehen und anzunehmen. 
+      Alle Gefühle haben ihre Berechtigung und dürfen da sein.
+    </p>
+  </div>
+
+  <div class="selected-feelings-display">
+    <h3>Deine erkannten Gefühle:</h3>
+    <div class="feelings-list">
+      <div *ngFor="let feeling of selectedFeelings()" class="feeling-card">
+        <h4>{{ feeling.name }}</h4>
+        <p class="feeling-description">{{ feeling.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acceptance-section">
+    <div class="affirmation-card">
+      <h3>Eine Botschaft für dich:</h3>
+      <p class="affirmation">{{ getRandomAffirmation() }}</p>
+    </div>
+  </div>
+
+  <div class="breathing-section">
+    <h3>Atemübung zur Beruhigung</h3>
+    <p class="breathing-intro">
+      Eine einfache Atemübung kann helfen, sich zu beruhigen und bei sich anzukommen.
+    </p>
+    
+    <div class="breathing-exercise" *ngIf="!breathingActive">
+      <button class="btn btn-breathing" (click)="startBreathingExercise()">
+        Atemübung starten
+      </button>
+      <p class="breathing-description">
+        <strong>4-4-6 Atemtechnik:</strong> 4 Sekunden einatmen, 4 Sekunden halten, 6 Sekunden ausatmen
+      </p>
+    </div>
+
+    <div class="breathing-active" *ngIf="breathingActive">
+      <div class="breathing-circle" 
+           [style.background-color]="getCurrentInstruction().color"
+           [class.breathing-inhale]="breathingPhase === 'inhale'"
+           [class.breathing-hold]="breathingPhase === 'hold'"
+           [class.breathing-exhale]="breathingPhase === 'exhale'">
+        <div class="breathing-text">
+          <div class="breathing-phase">{{ getCurrentInstruction().text }}</div>
+          <div class="breathing-count">{{ breathingCounter }}</div>
+        </div>
+      </div>
+      
+      <button class="btn btn-secondary" (click)="stopBreathingExercise()">
+        Stoppen
+      </button>
+    </div>
+  </div>
+
+  <div class="mindfulness-section">
+    <h3>5-4-3-2-1 Achtsamkeitsübung</h3>
+    <div class="mindfulness-card">
+      <p>Nimm bewusst wahr:</p>
+      <ul class="mindfulness-list">
+        <li><strong>5 Dinge</strong>, die du sehen kannst</li>
+        <li><strong>4 Dinge</strong>, die du hören kannst</li>
+        <li><strong>3 Dinge</strong>, die du berühren kannst</li>
+        <li><strong>2 Dinge</strong>, die du riechen kannst</li>
+        <li><strong>1 Ding</strong>, das du schmecken kannst</li>
+      </ul>
+      <p class="mindfulness-note">
+        Diese Übung hilft dir, im gegenwärtigen Moment anzukommen und dich zu erden.
+      </p>
+    </div>
+  </div>
+
+  <div class="step-actions">
+    <button 
+      class="btn btn-secondary" 
+      (click)="goBack()"
+      aria-label="Zurück zu Schritt 1">
+      Zurück
+    </button>
+    
+    <button 
+      class="btn btn-primary" 
+      (click)="proceedToNextStep()"
+      aria-label="Weiter zu Schritt 3: Bewältigung">
+      Weiter zu den Bewältigungsstrategien
+    </button>
+  </div>
+</div>
