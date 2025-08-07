@@ -39,7 +39,10 @@ export class GefuehleErkennen {
   proceedToNextStep() {
     if (this.canProceed()) {
       this.feelingsService.setCurrentStep(2);
-      this.router.navigate(['/gefuehle-annehmen']);
+      this.router.navigate(['/gefuehle-annehmen']).then(() => {
+        // Ensure page scrolls to top
+        window.scrollTo(0, 0);
+      });
     }
   }
   

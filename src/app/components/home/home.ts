@@ -21,6 +21,9 @@ export class Home {
   startJourney() {
     this.feelingsService.reset();
     this.feelingsService.setCurrentStep(1);
-    this.router.navigate(['/gefuehle-erkennen']);
+    this.router.navigate(['/gefuehle-erkennen']).then(() => {
+      // Ensure page scrolls to top
+      window.scrollTo(0, 0);
+    });
   }
 }
