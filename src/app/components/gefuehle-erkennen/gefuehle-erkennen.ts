@@ -47,6 +47,9 @@ export class GefuehleErkennen {
   }
   
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      // Ensure page scrolls to top
+      window.scrollTo(0, 0);
+    });
   }
 }

@@ -111,6 +111,9 @@ export class GefuehleAnnehmen {
   }
   
   goBack() {
-    this.router.navigate(['/gefuehle-erkennen']);
+    this.router.navigate(['/gefuehle-erkennen']).then(() => {
+      // Ensure page scrolls to top
+      window.scrollTo(0, 0);
+    });
   }
 }
