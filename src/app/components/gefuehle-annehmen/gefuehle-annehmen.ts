@@ -104,7 +104,10 @@ export class GefuehleAnnehmen {
   
   proceedToNextStep() {
     this.feelingsService.setCurrentStep(3);
-    this.router.navigate(['/gefuehle-bewaeltigen']);
+    this.router.navigate(['/gefuehle-bewaeltigen']).then(() => {
+      // Ensure page scrolls to top
+      window.scrollTo(0, 0);
+    });
   }
   
   goBack() {
